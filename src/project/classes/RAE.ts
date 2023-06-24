@@ -31,7 +31,7 @@ export class RAE {
   private iterationAction(result: SimulationResults): void {
     let reportEntries: RAEAgentReportEntry[] = [];
     for (let agent of this.agents) {
-      reportEntries = reportEntries.concat(agent.doWork(this.agents).entries);
+      reportEntries = [...reportEntries, ...agent.doWork(this.agents).entries];
     }
     this.countNewReceptionTrustRBaseOnReports(reportEntries);
     this.assignNewTrustLevels();

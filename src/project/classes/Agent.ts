@@ -38,7 +38,7 @@ export class Agent {
       this.config.mode === AgentMode.STRATEGIC &&
       receiver.config.mode === AgentMode.STRATEGIC
     ) {
-      return this.countStrategicP(receiver);
+      return this.countHonestP(receiver);
     }
     if (this.config.mode === AgentMode.STRATEGIC) {
       this.countStrategicP(receiver);
@@ -83,7 +83,7 @@ export class Agent {
     return 0;
   }
 
-  doWork(agents: Agent[]): any {
+  doWork(agents: Agent[]): RAEAgentReport {
     const chosenAgents = this.getRandomAgents(
       agents,
       this.config.minSuppliersNumberKMin,

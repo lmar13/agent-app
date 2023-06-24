@@ -21,14 +21,14 @@ export class SimulationResults {
         sAgentsTrustSum += agent.trustLevelV;
         sAgentsNum++;
       }
-
-      const avgF = this.countAvgF(agents, reportEntries);
-      this.addIterationValues(
-        sAgentsTrustSum / sAgentsNum || 0,
-        hAgentsTrustSum / hAgentsNum || 0,
-        avgF
-      );
     }
+
+    const avgF = this.countAvgF(agents, reportEntries);
+    this.addIterationValues(
+      sAgentsTrustSum / sAgentsNum || 0,
+      hAgentsTrustSum / hAgentsNum || 0,
+      avgF
+    );
   }
 
   private countAvgF(
